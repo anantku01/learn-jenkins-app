@@ -5,7 +5,7 @@ muiltple comments
 */
 
     stages {
-        stage('Build') {
+        /*stage('Build') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -22,7 +22,7 @@ muiltple comments
                     ls -la
                 '''
             }
-        }
+        }*/
 
         stage('Test') {
             agent {
