@@ -1,11 +1,11 @@
 pipeline {
     agent any
-/* Test 
-muiltple comments 
+/* Test multiple
+unit , e2e  
 */
 
     stages {
-        /*stage('Build') {
+        stage('Build') {
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -22,7 +22,7 @@ muiltple comments
                     ls -la
                 '''
             }
-        }*/
+        }
 
         stage('Test') {
             agent {
@@ -37,7 +37,7 @@ muiltple comments
                     #test -f build/index.html
                     npm test
                 '''
-                junit 'test-results/junit.xml'
+                // junit 'jest-results/junit.xml'
             }
         }
 
@@ -54,8 +54,10 @@ muiltple comments
                     npm install serve
                     node_modules/.bin/serve -s build &
                     sleep 10
+                    # mkdir jest-results
                     npx playwright test
                 '''
+                // junit 'jest-results/junit.xml'
             }
         }
     }
@@ -66,4 +68,3 @@ muiltple comments
         }
     }
 }
-
