@@ -37,6 +37,7 @@ muiltple comments
                     #test -f build/index.html
                     npm test
                 '''
+                junit 'test-results/junit.xml'
             }
         }
 
@@ -65,3 +66,4 @@ muiltple comments
         }
     }
 }
+
